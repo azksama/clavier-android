@@ -50,7 +50,10 @@ enum class Tool(val label: String, val icon: ImageVector) {
 fun ClavierTheme(config: ThemeConfig, content: @Composable () -> Unit) {
     val dark = config.mode == ColorMode.DARK || config.mode == ColorMode.SYSTEM && isSystemInDarkTheme()
     val resolved = config.resolved(isSystemInDarkTheme())
-    val scheme = if (dark) darkColorScheme(primary = Color(resolved.accent)) else lightColorScheme(primary = Color(resolved.accent))
+    val base = if (dark) darkColorScheme() else lightColorScheme()
+    // The keyboard keeps the chosen accent; settings/actions must remain readable on their own surfaces.
+    val primary = readableInk(base.surface.toArgb().toLong() and 0xFFFFFFFF, resolved.accent)
+    val scheme = base.copy(primary = primary, onPrimary = readableInk(primary.toArgb().toLong() and 0xFFFFFFFF, 0xFFFFFFFF))
     MaterialTheme(colorScheme = scheme, content = content)
 }
 

@@ -2,6 +2,7 @@ package fr.azks.clavier
 
 import org.junit.Assert.*
 import org.junit.Test
+import androidx.compose.ui.graphics.toArgb
 
 class ThemeTest {
     @Test fun acceptsOnlyOpaqueSixDigitHex() {
@@ -13,6 +14,10 @@ class ThemeTest {
     @Test fun contrastExtremesMatchWcag() {
         assertEquals(21.0, contrastRatio(0xFF000000, 0xFFFFFFFF), .0001)
         assertEquals(1.0, contrastRatio(0xFF286A83, 0xFF286A83), .0001)
+        listOf(0xFF000000, 0xFFFFFFFF, 0xFF286A83, 0xFF93BBE3, 0xFF808080).forEach { background ->
+            val corrected = readableInk(background, background).toArgb().toLong() and 0xFFFFFFFF
+            assertTrue(contrastRatio(background, corrected) >= 4.5)
+        }
     }
     @Test fun preservesCustomColorsAcrossDarkMode() {
         val custom = ThemeConfig.preset(KeyStyle.GLASS).copy(custom = true)
