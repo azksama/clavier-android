@@ -1,0 +1,15 @@
+.gradle/
+.idea/
+**/build/
+local.properties
+*.jks
+*.keystore
+.env
+.env.*
+!*.example
+output/
+tmp/
+dist/
+third_party/whisper.cpp/
+.cxx/
+design/exports/*.pdf

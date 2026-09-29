@@ -1,0 +1,182 @@
+[
+  {
+    "number": 1,
+    "id": "x3r0nJ",
+    "name": "Saisie claire",
+    "file": "exports/x3r0nJ.png"
+  },
+  {
+    "number": 2,
+    "id": "udfIq",
+    "name": "Saisie sombre",
+    "file": "exports/udfIq.png"
+  },
+  {
+    "number": 3,
+    "id": "SdDx4",
+    "name": "Émojis",
+    "file": "exports/SdDx4.png"
+  },
+  {
+    "number": 4,
+    "id": "JEFjb",
+    "name": "GIF Tenor",
+    "file": "exports/JEFjb.png"
+  },
+  {
+    "number": 5,
+    "id": "I6IcF",
+    "name": "Presse-papier",
+    "file": "exports/I6IcF.png"
+  },
+  {
+    "number": 6,
+    "id": "kv1Rh",
+    "name": "Tous les outils",
+    "file": "exports/kv1Rh.png"
+  },
+  {
+    "number": 7,
+    "id": "gHESG",
+    "name": "Traduction ML Kit",
+    "file": "exports/gHESG.png"
+  },
+  {
+    "number": 8,
+    "id": "A1YtrB",
+    "name": "Correction proposée",
+    "file": "exports/A1YtrB.png"
+  },
+  {
+    "number": 9,
+    "id": "rzeN9",
+    "name": "Whisper · écoute",
+    "file": "exports/rzeN9.png"
+  },
+  {
+    "number": 10,
+    "id": "H17tX",
+    "name": "Whisper · transcription",
+    "file": "exports/H17tX.png"
+  },
+  {
+    "number": 11,
+    "id": "F2jza",
+    "name": "Whisper · aperçu",
+    "file": "exports/F2jza.png"
+  },
+  {
+    "number": 12,
+    "id": "YENTE",
+    "name": "Annuler la correction",
+    "file": "exports/YENTE.png"
+  },
+  {
+    "number": 13,
+    "id": "NNFGA",
+    "name": "Activation Android",
+    "file": "exports/NNFGA.png"
+  },
+  {
+    "number": 14,
+    "id": "t4Yls",
+    "name": "Réglages",
+    "file": "exports/t4Yls.png"
+  },
+  {
+    "number": 15,
+    "id": "x7BtPv",
+    "name": "Modèle Whisper",
+    "file": "exports/x7BtPv.png"
+  },
+  {
+    "number": 16,
+    "id": "nOMBg",
+    "name": "Langues hors ligne",
+    "file": "exports/nOMBg.png"
+  },
+  {
+    "number": 17,
+    "id": "T8yIX",
+    "name": "Apparence",
+    "file": "exports/T8yIX.png"
+  },
+  {
+    "number": 18,
+    "id": "LWpMF",
+    "name": "Fournisseurs",
+    "file": "exports/LWpMF.png"
+  },
+  {
+    "number": 19,
+    "id": "SlOXu",
+    "name": "Permission microphone",
+    "file": "exports/SlOXu.png"
+  },
+  {
+    "number": 20,
+    "id": "g4yHE",
+    "name": "Microphone refusé",
+    "file": "exports/g4yHE.png"
+  },
+  {
+    "number": 21,
+    "id": "ub6HG",
+    "name": "Aucune parole détectée",
+    "file": "exports/ub6HG.png"
+  },
+  {
+    "number": 22,
+    "id": "CjEAD",
+    "name": "Presse-papier vide",
+    "file": "exports/CjEAD.png"
+  },
+  {
+    "number": 23,
+    "id": "p8SgxB",
+    "name": "Tenor indisponible",
+    "file": "exports/p8SgxB.png"
+  },
+  {
+    "number": 24,
+    "id": "meWOy",
+    "name": "Correction indisponible",
+    "file": "exports/meWOy.png"
+  },
+  {
+    "number": 25,
+    "id": "mHAHd",
+    "name": "Collection de thèmes",
+    "file": "exports/mHAHd.png"
+  },
+  {
+    "number": 26,
+    "id": "r5gr6l",
+    "name": "Thème verre",
+    "file": "exports/r5gr6l.png"
+  },
+  {
+    "number": 27,
+    "id": "r5Rhhk",
+    "name": "Thème néomorphique",
+    "file": "exports/r5Rhhk.png"
+  },
+  {
+    "number": 28,
+    "id": "Dket9",
+    "name": "Personnaliser les couleurs",
+    "file": "exports/Dket9.png"
+  },
+  {
+    "number": 29,
+    "id": "GcKvj",
+    "name": "Sélecteur de couleur",
+    "file": "exports/GcKvj.png"
+  },
+  {
+    "number": 30,
+    "id": "Q7HLT",
+    "name": "Télécharger une langue",
+    "file": "exports/Q7HLT.png"
+  }
+]
