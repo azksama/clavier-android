@@ -13,3 +13,6 @@ dist/
 third_party/whisper.cpp/
 .cxx/
 design/exports/*.pdf
+.build-tools/
+.signing/
+.kotlin/

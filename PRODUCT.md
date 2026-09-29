@@ -36,10 +36,11 @@ Le clavier apparaît dans le champ de saisie d'une autre application. Les conver
 ## Open Decisions
 
 - Nom définitif du clavier ; « Clavier » est un nom de travail.
-- Fournisseur de correction, modèle du téléphone et éventuel serveur.
-- Stack d'implémentation ; Kotlin / Jetpack Compose est une proposition, pas encore une décision utilisateur.
+- Modèle du téléphone ; fournisseur de correction complémentaire si Gemini Nano est indisponible.
 - Hypothèse de maquette : français / AZERTY par défaut, thèmes clair et sombre.
 
 ## Evidence on Hand
 
-Le projet est vierge. Les écrans pen.dev sont des maquettes, sans preuve de fonctionnement Android. Références et limites documentées dans design/README.md.
+Une première alpha native est implémentée en Kotlin / Jetpack Compose avec un InputMethodService. Whisper.cpp est compilé en JNI pour ARM64 et x86_64. La correction locale Gemini Nano est facultative et vérifie la compatibilité sur l'appareil. Les suggestions des gestionnaires de mots de passe passent par Android Autofill, avec intégration dans le clavier à partir d'Android 11.
+
+Les écrans pen.dev restent des maquettes, sans preuve de fonctionnement sur appareil. La compilation, les tests JVM et les contrôles d'artefacts sont distingués des essais réels dans VALIDATION.md. Le dépôt GitHub est public et la première distribution est une prerelease alpha.

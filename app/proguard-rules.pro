@@ -1,0 +1,2 @@
+-keep class fr.azks.clavier.WhisperNative { *; }
+-keepclasseswithmembernames,includedescriptorclasses class * { native <methods>; }

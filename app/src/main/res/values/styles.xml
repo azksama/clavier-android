@@ -1,0 +1,9 @@
+<resources>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:colorAccent">#0B57D0</item>
+    </style>
+    <string name="french">Français · AZERTY</string>
+    <string name="english">English · QWERTY</string>
+</resources>
