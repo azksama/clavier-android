@@ -6,6 +6,8 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.*
@@ -101,7 +103,8 @@ fun TypingKeyboard(
             KeyCap(if (symbols > 0) "=\\<" else if (shift == 2) "⇪" else "⇧", Modifier.weight(1.25f).height(keyHeight), t, prefs.vibrate,
                 onClick = { if (symbols > 0) symbols = if (symbols == 1) 2 else 1 else shift = if (shift == 0) 1 else 0 }, onLong = { shift = 2 }, label = "Majuscule", icon = if (symbols == 0) Icons.Rounded.KeyboardArrowUp else null)
             val third = if (symbols > 0) listOf("*", "\"", "'", ":", ";", "!", "?") else (if (prefs.language == "fr") "wxcvbn’" else "zxcvbnm").map { "$it" }
-            third.forEach { key -> KeyCap(if (shift > 0 && symbols == 0) key.uppercase() else key, Modifier.weight(1f).height(keyHeight), t, prefs.vibrate, onClick = { type(key) }) }
+            third.forEach { key -> KeyCap(if (shift > 0 && symbols == 0) key.uppercase() else key, Modifier.weight(1f).height(keyHeight), t, prefs.vibrate, onClick = { type(key) },
+                variants = accents[key].orEmpty().let { if (shift > 0 && symbols == 0) it.uppercase() else it }, onVariant = ::type) }
             KeyCap("⌫", Modifier.weight(1.25f).height(keyHeight), t, prefs.vibrate, onClick = { onKey("DELETE") }, repeating = true, label = "Effacer", icon = Icons.AutoMirrored.Rounded.Backspace)
         }
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -122,7 +125,7 @@ private fun KeyRow(keys: List<String>, height: androidx.compose.ui.unit.Dp, them
         keys.forEach { key -> KeyCap(if (upper) key.uppercase() else key, Modifier.weight(1f).height(height), theme, vibrate, onClick = { onKey(key) }, variants = accents[key].orEmpty().let { if (upper) it.uppercase() else it }, onVariant = { onKey(it) }) }
     }
 }
-private val accents = mapOf("a" to "àâäáãåæ", "e" to "éèêë", "i" to "îïíì", "o" to "ôöóòœø", "u" to "ùûüú", "c" to "ç", "n" to "ñ", "y" to "ÿ")
+private val accents = mapOf("a" to "àâäáãåæ", "e" to "éèêë", "i" to "îïíì", "o" to "ôöóòœø", "u" to "ùûüú", "c" to "ç", "n" to "ñ", "y" to "ÿ", "0" to "+", "1" to "*#", "." to "-")
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -161,7 +164,7 @@ private fun KeyCap(text: String, modifier: Modifier, theme: ThemeConfig, vibrate
         if (icon != null) Icon(icon, null, Modifier.size(22.dp), tint = ink)
         else Text(text, color = ink, fontSize = if (text.length == 1) 22.sp else if (text.length > 5) 12.sp else 13.sp, maxLines = 1)
         DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-            Row(Modifier.padding(4.dp)) { variants.forEach { c -> TextButton(onClick = { onVariant(c.toString()); expanded = false }, modifier = Modifier.sizeIn(minWidth = 40.dp)) { Text(c.toString(), fontSize = 22.sp) } } }
+            Row(Modifier.horizontalScroll(rememberScrollState()).padding(4.dp)) { variants.forEach { c -> TextButton(onClick = { onVariant(c.toString()); expanded = false }, modifier = Modifier.sizeIn(minWidth = 40.dp)) { Text(c.toString(), fontSize = 22.sp) } } }
         }
     }
 }
